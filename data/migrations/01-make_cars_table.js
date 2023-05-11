@@ -1,7 +1,15 @@
 exports.up = function (knex) {
-  // DO YOUR MAGIC
+  return knex.schema.createTable('cars', tbl => {
+    tbl.increments();
+    tbl.string('vin', 13).unique().notNullable();
+    tbl.string('make', 100).notNullable();
+    tbl.string('model', 100).notNullable();
+    tbl.numeric('mileage').unsigned().notNullable();
+    tbl.string('title', 100);
+    tbl.string('transmission', 100);
+  });
 };
 
 exports.down = function (knex) {
-  // DO YOUR MAGIC
+  return knex.schema.dropTableIfExists('cars');
 };
