@@ -16,16 +16,14 @@ const cars = [
     model: 'mustang',
     mileage: 120000,
     title: 'clean',
-    transmission: 'manual',
+
   },
   {
     vin: '33333333333333333',
     make: 'honda',
     model: 'accord',
     mileage: 220000,
-    title: 'clean',
-    transmission: 'automatic',
-  },
+  }
 ]
 
 beforeAll(async () => {
