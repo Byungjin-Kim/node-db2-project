@@ -1,10 +1,11 @@
-const express = require("express")
+const express = require("express");
+const carRouter = require("./cars/cars-router")
 
-const server = express()
-
-// DO YOUR MAGIC
+const server = express();
 
 server.use(express.json());
+
+server.use("/api/cars", carRouter);
 
 server.use('*', (req, res, next) => {
     next({ status: 404, message: 'not found' })
@@ -16,4 +17,4 @@ server.use((err, req, res) => {
     })
 })
 
-module.exports = server
+module.exports = server;
